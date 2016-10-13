@@ -39,5 +39,8 @@ def print_all_tasks(list):
     print "SBAT (shitty build automation tool) tasks\n"
     print tabulate(list, header, tabulatefmt='simple') + '\n'
 
+def dependsOn(taskToRun):
+    taskToRun()
+
 if __name__ == "__main__":
     main(sys.argv[1:])
