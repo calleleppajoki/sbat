@@ -1,11 +1,11 @@
-import os
-from sbat import dependsOn
+from taskutils import dependsOn
+from taskutils import cmd
 """Add tasks by creating a function."""
 
 
 def hello():
     """example task that echoes hello world"""
-    os.system('echo hello world')
+    cmd('echo hello world')
 
 
 def test():

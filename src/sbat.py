@@ -1,6 +1,6 @@
 #!/usr/bin/python
 """
-SBAT (shitty build automation tool)
+SBAT (simple/shitty build automation tool)
 
 Basically, a simplistic version of gradle tasks.
 """
@@ -12,14 +12,15 @@ from tabulate import tabulate
 
 
 def main(argv):
-    """Connecting the dots between argv and taskdef.py"""
     rawtaskdefinitions = dir(taskdef)
     taskdefinitions = []
+    excludeFilter = ('__', 'cmd', 'dependsOn')
 
     for task in rawtaskdefinitions:
         # Remove built-in, e.g. __name__
-        if not task.startswith('__'):
-            taskdefinitions.append(task)
+        if not task.startswith(excludeFilter):
+            doc = getattr(taskdef, task).__doc__
+            taskdefinitions.append([task, doc])
 
     for command in argv:
         if command == 'tasks':
@@ -33,14 +34,11 @@ def main(argv):
 
 
 def print_all_tasks(list):
-    """Prints all listed tasks"""
-    header = "Tasks"
-    print "\n#########################################"
-    print "SBAT (shitty build automation tool) tasks\n"
-    print tabulate(list, header, tabulatefmt='simple') + '\n'
+    header = ["Tasks", "Desc"]
+    print "\n################################################"
+    print "SBAT (simple/shitty build automation tool) tasks\n"
+    print tabulate(list, header, tablefmt='simple') + '\n'
 
-def dependsOn(taskToRun):
-    taskToRun()
 
 if __name__ == "__main__":
     main(sys.argv[1:])
