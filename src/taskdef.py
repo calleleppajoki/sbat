@@ -1,6 +1,5 @@
-from taskutils import dependsOn
-from taskutils import cmd
-"""Add tasks by creating a function."""
+from sbat.taskutils import dependsOn
+from sbat.taskutils import cmd
 
 
 def hello():

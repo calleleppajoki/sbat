@@ -9,7 +9,8 @@ keras/datasets/temp/*
 docs/site/*
 docs/theme/*
 tags
-Keras.egg-info
+SBAT.egg-info
+.cache
 
 # test-related
 .coverage

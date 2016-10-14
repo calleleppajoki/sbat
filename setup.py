@@ -14,5 +14,5 @@ setup(name='SBAT',
     install_requires=['',''],
     extras_require={
         #'visualize':['pydot-ng']
-    }
+    },
     packages=find_packages())

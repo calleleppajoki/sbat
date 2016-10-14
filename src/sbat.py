@@ -14,13 +14,15 @@ from tabulate import tabulate
 def main(argv):
     rawtaskdefinitions = dir(taskdef)
     taskdefinitions = []
+    taskdefinitionsbeautified = []
     excludeFilter = ('__', 'cmd', 'dependsOn')
 
     for task in rawtaskdefinitions:
         # Remove built-in, e.g. __name__
         if not task.startswith(excludeFilter):
             doc = getattr(taskdef, task).__doc__
-            taskdefinitions.append([task, doc])
+            taskdefinitions.append(task)
+            taskdefinitionsbeautified.append([task, doc])
 
     for command in argv:
         if command == 'tasks':
