@@ -6,10 +6,10 @@ from setuptools import find_packages
 setup(name='SBAT',
     version='0.1.0',
     description='A simple task runner',
-    author='Calle Leppäjoki',
+    author='Calle Leppajoki',
     author_email='calle.leppajoki@gmail.com',
     url='https://github.com/calleleppajoki/sbat',
-    download_url='',
+    download_url='https://github.com/calleleppajoki/sbat/tarball',
     license='',
     install_requires=['',''],
     extras_require={
