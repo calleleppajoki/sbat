@@ -11,7 +11,7 @@ exclude =
     Dockerfile,
     pytest.ini,
     requirements-dev.txt,
-    requirements-sbat.txt
+    requirements-sbat.txt,
     /home
 
 max-complexity = 10
