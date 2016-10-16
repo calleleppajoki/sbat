@@ -7,4 +7,4 @@ RUN pip install -e .
 #RUN flake8
 
 #COPY ./docker-entrypoint.sh /
-ENTRYPOINT ["pytest"]
+#ENTRYPOINT ["pytest"]
