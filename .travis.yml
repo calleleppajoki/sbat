@@ -13,3 +13,4 @@ before_script:
   - pip install -e .
 script:
   - pytest
+  - flake8
