@@ -1,22 +1,29 @@
-#import pytest
 import unittest
-from mock import MagicMock
 
 from src.sbat.taskutils import dependsOn
 from src.sbat.taskutils import cmd
 
-from src.taskdef import hello
+
+def exampleTask():
+    return 'test'
+
 
 class TestTaskUtils(unittest.TestCase):
 
-    def test_dependsOnPositive(self):
-        #mock.exampletask = "hello world"
-        #thing = ProductionClass()
-        #thing.method = MagicMock(return_value=3)
-        self.assertEqual( dependsOn(exampleTask), 'test' )
+    def test_dependsOnCallable(self):
+        """ Expect None when it's working """
+        self.assertIsNone(dependsOn(exampleTask), 'test')
 
-    def test_cmdPositive(self):
-        self.assertEqual( cmd('echo "hello world"'), 'hello world' )
+    def test_dependsOnNotCallable(self):
+        self.assertRaises(TypeError, dependsOn(0))
+
+    def test_cmdCallable(self):
+        """ Expect None when it's working """
+        self.assertIsNone(cmd('ls'))
+
+    def test_cmdNotCallable(self):
+        self.assertRaises(TypeError, cmd(0))
+
 
 if __name__ == '__main__':
     unittest.main()

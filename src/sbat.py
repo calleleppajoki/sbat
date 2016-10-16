@@ -29,7 +29,7 @@ def main(argv):
             print_all_tasks(taskdefinitions)
         elif command in taskdefinitions:
             method_to_call = getattr(taskdef, command)
-            result = method_to_call()
+            result = method_to_call() # noqa F841
         else:
             print "\nTask '%s' isn't recognized." % command
     print "\n\nSBAT Done.\n"

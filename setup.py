@@ -1,18 +1,8 @@
 from setuptools import setup
-from setuptools import find_packages
 
-# TODO: this is all very much in progress.
-
-setup(name='SBAT',
+setup(
+    name='sbat',
     version='0.1.0',
     description='A simple task runner',
-    author='Calle Leppajoki',
-    author_email='calle.leppajoki@gmail.com',
-    url='https://github.com/calleleppajoki/sbat',
-    download_url='https://github.com/calleleppajoki/sbat/tarball',
-    license='',
-    install_requires=['',''],
-    extras_require={
-        #'visualize':['pydot-ng']
-    },
-    packages=find_packages())
+    author='Calle Leppajoki'
+)

@@ -1,0 +1,16 @@
+[flake8]
+ignore = 
+    # H401: docstring should not start with a space
+    H401
+
+exclude =
+    .git,
+    .gitignore,
+    .coverage,
+    docker-entrypoint.sh,
+    Dockerfile,
+    pytest.ini,
+    requirements-dev.txt,
+    requirements-sbat.txt
+
+max-complexity = 10
