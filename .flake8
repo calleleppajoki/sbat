@@ -12,6 +12,6 @@ exclude =
     pytest.ini,
     requirements-dev.txt,
     requirements-sbat.txt,
-    *site-packages*
+    /home/travis/virtualenv/python2.7.10/lib/python2.7/site-packages/
 
 max-complexity = 10
