@@ -3,8 +3,8 @@ ADD . /app
 WORKDIR /app
 RUN pip install -r requirements-dev.txt
 RUN pip install -e .
-RUN pytest
-RUN flake8
+#RUN pytest
+#RUN flake8
 
-COPY ./docker-entrypoint.sh /
-ENTRYPOINT ["/docker-entrypoint.sh"]
+#COPY ./docker-entrypoint.sh /
+ENTRYPOINT ["pytest"]
