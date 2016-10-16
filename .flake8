@@ -12,6 +12,6 @@ exclude =
     pytest.ini,
     requirements-dev.txt,
     requirements-sbat.txt,
-    /home/*
+    *site-packages*
 
 max-complexity = 10
