@@ -3,8 +3,8 @@ language: python
 services:
   - docker
 before_install:
-  - docker build -t frolvlad/alpine-python2 .
-  - docker run frolvlad/alpine-python2 /bin/sh -C
+  - docker build -t sbat .
+  - docker run sbat /bin/sh -C
 install:
   - pip install -r requirements-dev.txt
   - pip install -e .
