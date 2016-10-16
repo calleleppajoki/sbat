@@ -2,10 +2,12 @@ sudo: required
 language: python
 services:
   - docker
-before_install:
+#before_install:
+#  - docker build -t sbat .
+#  - docker run sbat /bin/sh -C
+install:
   - docker build -t sbat .
   - docker run sbat /bin/sh -C
-install:
   - pip install -r requirements-dev.txt
   - pip install -e .
 script:
