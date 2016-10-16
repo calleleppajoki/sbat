@@ -6,4 +6,5 @@ RUN pip install -e .
 RUN pytest
 RUN flake8
 
+COPY ./docker-entrypoint.sh /
 ENTRYPOINT ["/docker-entrypoint.sh"]
