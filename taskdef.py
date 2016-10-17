@@ -2,6 +2,7 @@ from sbat.basetaskrunner import dependsOn
 from sbat.basetaskrunner import cmd
 from sbat.dockertestrunner import buildDocker
 from sbat.dockertestrunner import runDockerShell
+from sbat.dockertestrunner import runDockerCommand
 
 
 APPNAME = 'sbat'
@@ -36,3 +37,13 @@ def dockerBuild():
 def dockerShell():
     """ Start container and open shell """
     runDockerShell(APPNAME)
+
+
+def dockerStyle():
+    """ Start container and run flake8 """
+    runDockerCommand(APPNAME, 'flake8')
+
+
+def dockerTest():
+    """ Start container and run pytest """
+    runDockerCommand(APPNAME, 'pytest')

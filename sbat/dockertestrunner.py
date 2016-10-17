@@ -1,4 +1,5 @@
 import subprocess
+import os
 
 
 def buildDocker(appName):
@@ -7,3 +8,7 @@ def buildDocker(appName):
 
 def runDockerShell(appName):
     subprocess.call('docker run -it ' + appName + ' /bin/sh -C', shell=True)
+    
+
+def runDockerCommand(appName, command):
+    subprocess.call('docker run --rm -i ' + appName + ' ' + command, shell=True)

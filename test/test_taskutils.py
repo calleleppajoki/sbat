@@ -1,7 +1,7 @@
 import unittest
 
-from src.sbat.basetaskrunner import dependsOn
-from src.sbat.basetaskrunner import cmd
+from sbat.basetaskrunner import dependsOn
+from sbat.basetaskrunner import cmd
 
 
 def exampleTask():
