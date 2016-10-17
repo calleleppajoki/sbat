@@ -47,3 +47,10 @@ def dockerStyle():
 def dockerTest():
     """ Start container and run pytest """
     runDockerCommand(APPNAME, 'pytest')
+
+
+def testall():
+    """ Builds, Stylechecks, and Pytests in Docker """
+    dependsOn(dockerBuild)
+    dependsOn(dockerStyle)
+    dependsOn(dockerTest)

@@ -14,3 +14,5 @@ exclude =
     requirements-sbat.txt
 
 max-complexity = 10
+
+max-line-length = 120
