@@ -9,6 +9,7 @@ def restore():
 
 def dotnetrun():
     """dotnet run"""
+    dependsOn(publish)
     cmd('dotnet run')
 
 

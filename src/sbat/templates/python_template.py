@@ -3,8 +3,10 @@ from sbat.basetaskrunner import cmd
 
 
 def test():
-	""" Run all tests """
-	cmd('pytest')
+    """ Run all tests """
+    dependsOn(style)
+    cmd('pytest')
+
 
 def style():
     """ Run flake8 """
