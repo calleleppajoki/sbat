@@ -4,7 +4,8 @@ from sbat.basetaskrunner import cmd
 
 def test():
 	""" Run all tests """
-	cmd("pytest")
+	cmd('pytest')
 
 def style():
     """ Run flake8 """
+    cmd('flake8')

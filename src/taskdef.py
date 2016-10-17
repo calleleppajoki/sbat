@@ -1,10 +1,11 @@
 from sbat.basetaskrunner import dependsOn
 from sbat.basetaskrunner import cmd
-from sbat.dockertestrunner import dockerBuild
-from sbat.dockertestrunner import dockerShell
+from sbat.dockertestrunner import buildDocker
+from sbat.dockertestrunner import runDockerShell
 
 
 APPNAME = 'sbat'
+
 
 def hello():
     """example task that echoes hello world"""
@@ -29,9 +30,9 @@ def testDependsOn():
 
 def dockerBuild():
     """ Build from Dockerfile """
-    dockerBuild(APPNAME)
+    buildDocker(APPNAME)
 
 
 def dockerShell():
     """ Start container and open shell """
-    dockerShell(APPNAME)
+    runDockerShell(APPNAME)
