@@ -1,6 +1,10 @@
-from sbat.taskutils import dependsOn
-from sbat.taskutils import cmd
+from sbat.basetaskrunner import dependsOn
+from sbat.basetaskrunner import cmd
+from sbat.dockertestrunner import dockerBuild
+from sbat.dockertestrunner import dockerShell
 
+
+APPNAME = 'sbat'
 
 def hello():
     """example task that echoes hello world"""
@@ -9,15 +13,25 @@ def hello():
 
 def test():
     """Test runs all unit tests"""
-    print "RUN ALL TESTS - FROM TASKDEF"
+    print 'RUN ALL TESTS - FROM TASKDEF'
 
 
 def testbefore():
     """TODO: Until unittest is added - keep test here"""
-    print "Run first"
+    print 'Run first'
 
 
 def testDependsOn():
     """TODO: Until unittest is added - keep test here"""
     dependsOn(testbefore)
-    print "Run after dependsOn"
+    print 'Run after dependsOn'
+
+
+def dockerBuild():
+    """ Build from Dockerfile """
+    dockerBuild(APPNAME)
+
+
+def dockerShell():
+    """ Start container and open shell """
+    dockerShell(APPNAME)

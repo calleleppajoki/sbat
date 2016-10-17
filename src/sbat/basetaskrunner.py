@@ -1,4 +1,4 @@
-import os
+import subprocess
 
 
 def dependsOn(taskToRun):
@@ -9,8 +9,7 @@ def dependsOn(taskToRun):
 
 
 def cmd(cmdToRun):
-    # TODO: change to subprocess.call & split cmdToRun into list of str
     try:
-        os.system(cmdToRun)
+        subprocess.call(cmdToRun, shell=True)
     except TypeError as e:
         print 'something went wrong %s' % e

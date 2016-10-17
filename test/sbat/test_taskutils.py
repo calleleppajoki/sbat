@@ -1,14 +1,14 @@
 import unittest
 
-from src.sbat.taskutils import dependsOn
-from src.sbat.taskutils import cmd
+from src.sbat.basetaskrunner import dependsOn
+from src.sbat.basetaskrunner import cmd
 
 
 def exampleTask():
     return 'test'
 
 
-class TestTaskUtils(unittest.TestCase):
+class TestBaseTaskRunner(unittest.TestCase):
 
     def test_dependsOnCallable(self):
         """ Expect None when it's working """
