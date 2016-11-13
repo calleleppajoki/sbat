@@ -15,7 +15,7 @@ def main(argv):
     rawtaskdefinitions = dir(taskdef)
     taskdefinitions = []
     taskdefinitionsbeautified = []
-    excludeFilter = ('__', 'cmd', 'dependsOn')
+    excludeFilter = ('__', 'cmd', 'dependsOn', 'APPNAME')
 
     for task in rawtaskdefinitions:
         # Remove built-in, e.g. __name__
@@ -23,10 +23,10 @@ def main(argv):
             doc = getattr(taskdef, task).__doc__
             taskdefinitions.append(task)
             taskdefinitionsbeautified.append([task, doc])
-
+    
     for command in argv:
         if command == 'tasks':
-            print_all_tasks(taskdefinitions)
+            print_all_tasks(taskdefinitionsbeautified)
         elif command in taskdefinitions:
             method_to_call = getattr(taskdef, command)
             result = method_to_call() # noqa F841
@@ -35,11 +35,11 @@ def main(argv):
     print "\n\nSBAT Done.\n"
 
 
-def print_all_tasks(list):
+def print_all_tasks(tasks):
     header = ["Tasks", "Desc"]
     print "\n################################################"
     print "SBAT (simple/shitty build automation tool) tasks\n"
-    print tabulate(list, header, tablefmt='simple') + '\n'
+    print tabulate(tasks, header, tablefmt='simple') + '\n'
 
 
 if __name__ == "__main__":
