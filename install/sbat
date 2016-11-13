@@ -4,4 +4,6 @@ then
 	python sbat.py $*
 else
 	echo ERROR: sbat.py not found in current directory
+	# prompt for install?
+	# pull sbat distro into current directory
 fi

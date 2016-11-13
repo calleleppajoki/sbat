@@ -23,7 +23,7 @@ def main(argv):
             doc = getattr(taskdef, task).__doc__
             taskdefinitions.append(task)
             taskdefinitionsbeautified.append([task, doc])
-    
+
     for command in argv:
         if command == 'tasks':
             print_all_tasks(taskdefinitionsbeautified)
