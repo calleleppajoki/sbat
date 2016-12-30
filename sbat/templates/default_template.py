@@ -1,5 +1,5 @@
-from sbat.basetaskrunner import dependsOn
-from sbat.basetaskrunner import cmd
+from sbat.basetaskrunner import dependsOn # noqa F841
+from sbat.basetaskrunner import cmd # noqa F841
 
 
 def test():
